@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adams Nexus LLC</title>
+<meta name="description" content="Adams Nexus LLC is a Wyoming-registered company that holds and directs capital for property investments operated under the Keyspace Property name.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    color-scheme: light dark;
+    --ground: #F6F7F5;
+    --surface: #FFFFFF;
+    --ink: #1B2321;
+    --muted: #59635F;
+    --faint: #808A85;
+    --line: #DBE0DC;
+    --accent: #35564F;
+    --accent-soft: #5E7D75;
+
+    --measure: 42rem;
+    --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --f-serif: "Spectral", "Iowan Old Style", Georgia, "Times New Roman", serif;
+    --f-sans: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #131715;
+      --surface: #1A201D;
+      --ink: #EBEEEC;
+      --muted: #9BA49F;
+      --faint: #79837E;
+      --line: #2A322E;
+      --accent: #8BAFA4;
+      --accent-soft: #6F948B;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img { max-width: 100%; }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+  a:hover { color: var(--accent-soft); }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  /* ---- Masthead ---- */
+  header.masthead { padding: 4.5rem 0 2.75rem; }
+
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .wordmark svg { display: block; flex: none; }
+
+  .kicker {
+    margin: 2.6rem 0 0.9rem;
+    font-family: var(--f-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: var(--f-serif);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 3.35rem);
+    line-height: 1.08;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
+  }
+  h1 .ent {
+    font-family: var(--f-mono);
+    font-weight: 500;
+    font-size: 0.34em;
+    letter-spacing: 0.12em;
+    vertical-align: 0.62em;
+    color: var(--accent-soft);
+    margin-left: 0.35em;
+  }
+
+  p.lede {
+    max-width: 34rem;
+    margin: 1.4rem 0 0;
+    font-size: 1.1875rem;
+    color: var(--muted);
+  }
+
+  /* ---- Sections ---- */
+  main { padding-bottom: 1rem; }
+
+  section {
+    border-top: 1px solid var(--line);
+    padding: 2.9rem 0;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.9rem;
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+  }
+
+  h2 {
+    margin: 0 0 0.85rem;
+    font-family: var(--f-serif);
+    font-weight: 600;
+    font-size: 1.55rem;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  section p { margin: 0 0 1rem; max-width: 36rem; }
+  section p:last-child { margin-bottom: 0; }
+
+  .todo {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border-left: 2px solid var(--accent);
+    padding: 0.15em 0.4em;
+    font-family: var(--f-mono);
+    font-size: 0.85em;
+  }
+
+  /* ---- Corporate details ---- */
+  dl.details { margin: 0.5rem 0 0; display: flex; flex-direction: column; }
+  .row {
+    display: grid;
+    grid-template-columns: 11.5rem 1fr;
+    gap: 1.25rem;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .row:last-child { border-bottom: 1px solid var(--line); }
+  .row dt {
+    font-family: var(--f-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.18rem;
+  }
+  .row dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .row dd .sub { display: block; color: var(--faint); font-size: 0.9rem; margin-top: 0.15rem; }
+
+  @media (max-width: 34rem) {
+    .row { grid-template-columns: 1fr; gap: 0.3rem; }
+    .row dt { padding-top: 0; }
+  }
+
+  /* ---- Contact card ---- */
+  .contact-block {
+    margin-top: 1.4rem;
+    padding: 1.4rem 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    max-width: 36rem;
+  }
+  .contact-block .label {
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 0.5rem;
+  }
+  .contact-block address { font-style: normal; line-height: 1.6; }
+  .contact-block .email { font-weight: 500; }
+
+  /* ---- Footer ---- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 2.4rem 0 3.5rem;
+    font-family: var(--f-mono);
+    font-size: 0.76rem;
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+    color: var(--faint);
+  }
+  footer .rule-note { max-width: 34rem; margin: 0 0 1rem; }
+  footer p { margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="wordmark">
+      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" fill="none">
+        <path d="M16 16 L6 7 M16 16 L26 9 M16 16 L9 26 M16 16 L25 24" stroke="currentColor" stroke-width="1.2" style="color:var(--accent)"/>
+        <circle cx="6" cy="7" r="2.1" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.2"/>
+        <circle cx="26" cy="9" r="2.1" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.2"/>
+        <circle cx="9" cy="26" r="2.1" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.2"/>
+        <circle cx="25" cy="24" r="2.1" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.2"/>
+        <circle cx="16" cy="16" r="2.7" fill="var(--accent)"/>
+      </svg>
+      <span>Adams&nbsp;Nexus</span>
+    </div>
+
+    <p class="kicker">Sheridan, Wyoming &nbsp;&middot;&nbsp; United States</p>
+
+    <h1>Adams Nexus<span class="ent">LLC</span></h1>
+
+    <p class="lede">
+      A Wyoming-registered company that holds and directs capital for property
+      investments, operated under the Keyspace Property name.
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <p class="eyebrow">About</p>
+      <h2>About the company</h2>
+      <p>
+        Adams Nexus LLC is a limited liability company registered in the State of
+        Wyoming, United States. It acts as the ownership and funding entity for
+        our property activities: capital is held and allocated through Adams
+        Nexus and invested into property operated under the Keyspace Property
+        name.
+      </p>
+      <p>
+        Adams Nexus LLC does not sell products or services to the public. Its
+        role is ownership, funding, and administrative oversight. Property
+        sourcing, management, and day-to-day operations are carried out as
+        Keyspace Property.
+      </p>
+    </section>
+
+    <section>
+      <p class="eyebrow">Contact</p>
+      <h2>Get in touch</h2>
+      <p>
+        For business, partnership, and general inquiries, reach us at the address
+        and email below.
+      </p>
+      <div class="contact-block">
+        <div class="label">Business address</div>
+        <address>
+          Adams Nexus LLC<br>
+          30 N Gould St<br>
+          Sheridan, WY 82801<br>
+          United States of America
+        </address>
+        <p class="email" style="margin:0.9rem 0 0;">
+          <a href="mailto:accounts@adamsnexusllc.com">accounts@adamsnexusllc.com</a>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <p class="eyebrow">Company details</p>
+      <h2>Registration</h2>
+      <dl class="details">
+        <div class="row"><dt>Legal name</dt><dd>Adams Nexus LLC</dd></div>
+        <div class="row"><dt>Entity type</dt><dd>Limited liability company</dd></div>
+        <div class="row"><dt>Jurisdiction</dt><dd>State of Wyoming, United States</dd></div>
+        <div class="row"><dt>Business address</dt><dd>30 N Gould St, Sheridan, WY 82801, USA</dd></div>
+        <div class="row"><dt>Email</dt><dd><a href="mailto:accounts@adamsnexusllc.com">accounts@adamsnexusllc.com</a></dd></div>
+        <div class="row"><dt>Website</dt><dd>adamsnexusllc.com</dd></div>
+      </dl>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="rule-note">
+      This is the official website of Adams Nexus LLC, maintained for company
+      identification and contact purposes.
+    </p>
+    <p>Adams Nexus LLC &nbsp;&middot;&nbsp; Registered in the State of Wyoming</p>
+    <p>30 N Gould St, Sheridan, WY 82801, United States</p>
+    <p>&copy; 2026 Adams Nexus LLC. All rights reserved.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
